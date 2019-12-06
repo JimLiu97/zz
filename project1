@@ -1,0 +1,29 @@
+<title>Running Puppy</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var puppies= new Array(16);
+var curPuppy = 0;
+var begin;
+var imagesLoaded = 0;
+for(var i = 0; i < 6; ++i) {
+	puppies[i] = new Image();
+	puppies[i].src = "puppy" + i + ".gif";
+	if (i == 5)
+		begin = setInterval("runPuppy()", 90);
+}
+function runPuppy() {
+        if (curPuppy == 5)
+			curPuppy = 0;
+        else
+        	++curPuppy;
+        document.getElementsByTagName("img")[0].src = puppies[curPuppy].src;
+}
+/* ]]> */
+</script>
+</head>
+<body>
+<h1>Running Puppy</h1>
+<p><img src="puppy0.gif" height="60" width="97" alt="Image of a pushpin." /></p>
+</body>
+</html>
